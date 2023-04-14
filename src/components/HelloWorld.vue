@@ -26,6 +26,7 @@
               class="feature d-flex flex-row justify-content-around border border-2 px-2 py-sm-1 mx-2 mx-md-2 mx-sm-1 px-sm-1 rounded"
             >
               <button
+                @click="showFilters"
                 class="btn btn-lg btn-white d-flex flex-column align-items-center feature-buttons"
               >
                 <i>
@@ -45,6 +46,9 @@
 
                 Star
               </button>
+              <serviceFilters v-if="serviceFilter1" />
+              <div  v-if="serviceFilter1" class="overlay"></div>
+
               <button
                 class="btn btn-lg btn-white d-flex flex-column align-items-center feature-buttons"
               >
@@ -1130,8 +1134,13 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
 </template>
 
 <script>
+import serviceFilters from "./serviceFilters.vue";
+
 export default {
   name: "HelloWorld",
+  components: {
+    serviceFilters,
+  },
   data() {
     return {
       activeTab: "pending",
@@ -1139,6 +1148,7 @@ export default {
       visit: null,
       first: "bg-white",
       second: "bg-message",
+      serviceFilter1: false,
     };
   },
   methods: {
@@ -1164,6 +1174,9 @@ export default {
         this.first = "white";
       }
     },
+    showFilters() {
+      this.serviceFilter1 = true;
+    },
   },
 };
 </script>
@@ -1178,8 +1191,18 @@ h5,
 h6 {
   margin: 0;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999; /* Set a high z-index to overlay on top of other content */
+}
 .message-inner {
   width: 100%;
+  background-color: lemonchiffon;
 }
 .chat-bar {
   width: 30%;

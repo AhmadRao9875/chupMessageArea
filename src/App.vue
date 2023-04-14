@@ -1,14 +1,21 @@
 <template>
-  <HelloWorld />
+  <uploadFile />
+  <!-- <forwardMessage /> -->
+  <!-- <HelloWorld /> -->
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import uploadFile from './components/uploadFile.vue';
+// import HelloWorld from "./components/HelloWorld.vue";
+// import forwardMessage from "./components/forwardMessage.vue";
+
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    // HelloWorld,
+    // forwardMessage,
+    uploadFile,
   },
 };
 </script>
