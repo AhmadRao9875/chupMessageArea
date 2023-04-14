@@ -1410,7 +1410,7 @@ a {
   }
   .message-details {
     width: 30%;
-    height: auto;
+    height: 100%;
     justify-content: center;
   }
   .message-filters {
