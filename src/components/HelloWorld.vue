@@ -26,8 +26,9 @@
               class="feature d-flex flex-row justify-content-around border border-2 px-2 py-sm-1 mx-2 mx-md-2 mx-sm-1 px-sm-1 rounded"
             >
               <button
-                @click="showFilters"
                 class="btn btn-lg btn-white d-flex flex-column align-items-center feature-buttons"
+                data-target="#filters"
+                data-toggle="modal"
               >
                 <i>
                   <svg
@@ -46,11 +47,174 @@
 
                 Star
               </button>
-              <serviceFilters v-if="serviceFilter1" />
-              <div  v-if="serviceFilter1" class="overlay"></div>
+              <!-- Service Modal -->
+              <div
+                class="modal fade"
+                id="filters"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div
+                      class="d-flex justify-contetnt-start pl-4 pl-md-2 pl-sm-1 py-2 py-md-1 py-sm-1"
+                    >
+                      <button
+                        type="button"
+                        class="close w-40 d-flex justify-contetnt-start"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h5
+                        class="modal-title w-50 d-flex align-items-start font-weight-bold"
+                        id="exampleModalLabel"
+                      >
+                        Filters
+                      </h5>
+                    </div>
+                    <hr class="mt-1" style="margin-bottom: 0" />
+                    <div class="px-4 px-md-2 px-sm-1 py-4 py-md-2 py-sm-1">
+                      <div class="positions">
+                        <div class="sub-head">
+                          <h2>Customers</h2>
+                        </div>
+                        <div class="customer-options">
+                          <label>
+                            <input type="radio" value="1" name="option" />
+                            Old Customers
+                          </label>
+                          <label>
+                            <input type="radio" value="1" name="option" />
+                            New Customers
+                          </label>
+                        </div>
+                      </div>
+                      <hr class="mt-1" style="margin-bottom: 0" />
 
+                      <div class="service">
+                        <div class="sub-head">
+                          <h2>Service</h2>
+                        </div>
+                        <div class="service-options">
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                        </div>
+                        <button class="showmore">show More</button>
+                      </div>
+                      <hr class="mt-1" style="margin-bottom: 0" />
+                      <div class="service">
+                        <div class="sub-head">
+                          <h2>Staff</h2>
+                        </div>
+                        <div class="service-options">
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                          <label>
+                            <input type="checkbox" value="1" />
+                            Option 1
+                          </label>
+                        </div>
+                        <button class="showmore">show More</button>
+                      </div>
+                      <hr class="mt-1" style="margin-bottom: 0" />
+                      <div class="positions">
+                        <div class="sub-head">
+                          <h2>Customers</h2>
+                        </div>
+                        <div class="customer-options waited-time">
+                          <input type="radio" value="1" name="option" />
+                          <span class="ml-2 mr-2"> Longest Waited Time </span>
+
+                          <input type="radio" value="1" name="option" />
+                          <span class="ml-2"> Shortest Waited Time </span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="mt-1" style="margin-bottom: 0" />
+                    <div class="save-clear-buttons py-3 py-md-2 py-sm-1">
+                      <button type="button" class="save-button">Save</button>
+                      <button
+                        type="button"
+                        class="clear-button"
+                        data-dismiss="modal"
+                      >
+                        Clear All
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <button
                 class="btn btn-lg btn-white d-flex flex-column align-items-center feature-buttons"
+                data-target="#forwardMessage"
+                data-toggle="modal"
               >
                 <i>
                   <svg
@@ -69,6 +233,110 @@
 
                 Archieve
               </button>
+
+              <!-- forward Message Modal -->
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="forwardMessage"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div
+                  class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                >
+                  <div class="modal-content">
+                    <div
+                      class="header d-flex flex-column py-4 py-md-2 py-sm-1 px-4 px-md-2 px-sm-1"
+                    >
+                      <button
+                        type="button"
+                        class="close d-flex justify-content-start align-items-center"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <div
+                        class="forward-heading font-weight-bold d-flex flex-column"
+                      >
+                        <h2>Forward message to check</h2>
+                        <h5 class="text-gray">
+                          Send message to check by Admin/ Doctor , before
+                          sending to the patient
+                        </h5>
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div class="modal-body">
+                      <div class="forward-message-container">
+                        <div
+                          class="forward-inner w-100 py-4 py-md-2 py-sm-1 px-4 px-md-2 px-sm-1 bg-white rounded rounded-4 d-flex flex-column"
+                        >
+                          <div class="inner" v-show="showDiv">
+                            <form class="form-inline my-2 my-lg-0 w-100">
+                              <input
+                                class="form-control search-bar w-95"
+                                type="search"
+                                placeholder="Search Admin Doctor"
+                                aria-label="Search"
+                              />
+                              <button
+                                class="btn search-btn btn-outline-success my-2 my-sm-0 w-5"
+                                type="submit"
+                              >
+                                Search
+                              </button>
+                            </form>
+                            <div class="staff-list">
+                              <div
+                                v-for="user in staff"
+                                :key="user.id"
+                                class="user-container"
+                              >
+                                <input
+                                  type="checkbox"
+                                  v-model="user.isSelected"
+                                  @change="updateSelectedUsers"
+                                />
+                                <img
+                                  class="user-profile-pic"
+                                  :src="user.profile"
+                                  alt="Profile Pic"
+                                />
+                                <div class="online-badge"></div>
+                                <span class="user-name">{{ user.name }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div
+                      class="forward-cancel d-flex py-4 py-md-2 py-sm-1 px-4 px-md-2 px-sm-1 align-items-center"
+                    >
+                      <button
+                        @click="showSelected"
+                        type="button"
+                        class="btn for-canc green text-white font-weight-bold btn-lg mr-5 mr-md-3 mr-sm-1"
+                      >
+                        Forward
+                      </button>
+                      <button
+                        type="button"
+                        class="btn for-canc gray btn-lg"
+                        data-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <button
                 class="btn btn-lg btn-white d-flex flex-column align-items-center feature-buttons"
               >
@@ -113,45 +381,49 @@
             </form>
           </div>
           <hr class="left-rule" />
-          <div
-            class="message-filters d-flex flex-wrap justify-content-between my-3 my-sm-2"
-          >
-            <a
-              @click="showActiveMessage('all')"
-              class="feature-btns nav-link pl-lg-4 pl-md-2 pl-sm-1 font-weight-bold"
-              :class="{ active: activeTab === 'all' }"
-            >
-              All
-            </a>
-            <a
-              @click="showActiveMessage('team')"
-              class="feature-btns nav-link font-weight-bold"
-              :class="{ active: activeTab === 'team' }"
-            >
-              Team
-            </a>
-            <a
-              @click="showActiveMessage('pending')"
-              class="feature-btns nav-link pending-color font-weight-bold d-flex align-items-center"
-              :class="{ active: activeTab === 'pending' }"
-            >
-              Pending
-              <i>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="#E3672D"
-                  class="bi bi-1-circle-fill ml-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"
-                  />
-                </svg>
-              </i>
-            </a>
-          </div>
+          <ul class="d-flex justify-content-between nav nav-tabs">
+            <li class="nav-item">
+              <a
+                @click="showActiveMessage('all')"
+                class="nav-link pl-lg-4 pl-md-2 pl-sm-1 font-weight-bold"
+                :class="{ active: activeTab === 'all' }"
+              >
+                All
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                @click="showActiveMessage('team')"
+                class="feature-btns nav-link font-weight-bold n"
+                :class="{ active: activeTab === 'team' }"
+              >
+                Team
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                @click="showActiveMessage('pending')"
+                class="feature-btns nav-link pending-color font-weight-bold d-flex align-items-center"
+                :class="{ active: activeTab === 'pending' }"
+              >
+                Pending
+                <i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#E3672D"
+                    class="bi bi-1-circle-fill ml-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"
+                    />
+                  </svg>
+                </i>
+              </a>
+            </li>
+          </ul>
           <div
             v-show="activeTab === 'all'"
             class="message-box d-flex flex-column"
@@ -373,122 +645,254 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
             <button class="btn btn-all font-weight-bold">Reply Later</button>
           </div>
         </div>
-        <div class="message-details d-flex flex-column bg-white">
+        <div class="message-details d-flex flex-column bg-white px-2 py-2">
           <div class="heading-name"><h5>About Saiful Jamal</h5></div>
-          <div
-            class="message-filters d-flex justify-content-between my-3 my-sm-2"
+          <ul
+            class="message-filters nav nav-pills mb-3 d-flex justify-content-between my-3 my-sm-2"
+            id="pills-tab"
+            role="tablist"
           >
-            <a
-              @click="showActiveFeature('details')"
-              class="feature-btns feature-tag font-weight-bold"
-              :class="{ active: activeFeature === 'details' }"
-            >
-              Details
-            </a>
-            <a
-              @click="showActiveFeature('visits')"
-              class="feature-btns feature-tag font-weight-bold"
-              :class="{ active: activeFeature === 'visits' }"
-              >Visits</a
-            >
-            <a
-              @click="showActiveFeature('notes')"
-              class="feature-btns feature-tag font-weight-bold d-flex align-items-center"
-              :class="{ active: activeFeature === 'notes' }"
-            >
-              Notes
-            </a>
-            <a
-              @click="showActiveFeature('files')"
-              class="feature-btns feature-tag font-weight-bold"
-              :class="{ active: activeFeature === 'files' }"
-              >files</a
-            >
-          </div>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-home-tab"
+                data-toggle="pill"
+                data-target="#pills-details"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+                :class="{ active: activeFeature === 'details' }"
+              >
+                Details
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-profile-tab"
+                data-toggle="pill"
+                data-target="#pills-visits"
+                type="button"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+                :class="{ active: activeFeature === 'visits' }"
+              >
+                Visits
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link feature-tags"
+                id="pills-contact-tab"
+                data-toggle="pill"
+                data-target="#pills-notes"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+                :class="{ active: activeFeature === 'notes' }"
+              >
+                Notes
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-contact-tab"
+                data-toggle="pill"
+                data-target="#pills-files"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+                :class="{ active: activeFeature === 'files' }"
+              >
+                files
+              </button>
+            </li>
+          </ul>
           <hr class="center-rule" />
-          <div
-            v-show="activeFeature === 'details'"
-            class="feature-details w-100"
-          >
-            <div class="email-wht">
-              <div class="email d-flex align-items-center mt-3">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    fill="currentColor"
-                    class="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                    />
-                  </svg>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">khadijah123@gmail.com</h6>
+          <div class="tab-content" id="pills-tabContent">
+            <!-- Details -->
+            <div
+              class="tab-pane fade show active"
+              id="pills-details"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
+            >
+              <div class="email-wht">
+                <div class="email d-flex align-items-center mt-3">
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-envelope-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                      />
+                    </svg>
+                  </i>
+                  <h6 class="ml-4 ml-md-2 ml-sm-1">khadijah123@gmail.com</h6>
+                </div>
+                <div class="whatsapp d-flex align-items-center mt-2 mb-3">
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                      />
+                    </svg>
+                  </i>
+                  <h6 class="ml-4 ml-md-2 ml-sm-1">+0900 786 01</h6>
+                </div>
               </div>
-              <div class="whatsapp d-flex align-items-center mt-2 mb-3">
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">+0900 786 01</h6>
+              <hr class="center-rule" />
+              <div class="total-first">
+                <div
+                  class="totla d-flex align-items-center justify-content-between mt-2"
+                >
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      class="bi bi-envelope-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                      />
+                    </svg>
+                    <span class="greyy-text ml-1">Total visits</span>
+                  </i>
+                  <h6 class="ml-4 ml-md-2 ml-sm-1">23</h6>
+                </div>
+                <div
+                  class="first-visit d-flex align-items-center justify-content-between mt-2 mb-2"
+                >
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                      />
+                    </svg>
+                    <span class="greyy-text ml-1">First visit</span>
+                  </i>
+                  <div class="detail">
+                    <li
+                      class="border-0 font-weight-bold bg-white nav-item dropdown w-100"
+                      name="detail"
+                      id="detail"
+                    >
+                      <a
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        role="button"
+                        aria-expanded="false"
+                        >23 Dec, 2022</a
+                      >
+                      <div class="dropdown-menu dropdown-menu-right w-100" >
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Type</h5>
+                          <h6 class="black-text">Appointment</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Visit Status</h5>
+                          <h6 class="black-text">Served</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Time Started</h5>
+                          <h6 class="black-text">01:30</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Time Ended</h5>
+                          <h6 class="black-text">02:20</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Service</h5>
+                          <h6 class="black-text">Cardialogy</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Staff</h5>
+                          <h6 class="black-text">Dr. Le Kim En</h6>
+                        </a>
+                        <a
+                          class="options d-flex align-items-center justify-content-between dropdown-item"
+                          href="#"
+                        >
+                          <h5 class="greyy-text">Reschedual</h5>
+                          <h6 class="black-text">3 times</h6>
+                        </a>
+                      </div>
+                    </li>
+                  </div>
+                </div>
               </div>
-            </div>
-            <hr class="center-rule" />
-            <div class="total-first">
+
               <div
-                class="totla d-flex align-items-center justify-content-between mt-2"
+                class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
               >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                    />
-                  </svg>
-                  <span class="greyy-text ml-1">Total visits</span>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">23</h6>
-              </div>
-              <div
-                class="first-visit d-flex align-items-center justify-content-between mt-2 mb-2"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="greyy-text ml-1">First visit</span>
-                </i>
-                <div class="detail">
+                <div
+                  class="last-vist d-flex flex-row justify-content-between mt-4 mt-md-2 mt-md-1"
+                >
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                      />
+                    </svg>
+                    <span class="font-weight-bold greyy-text ml-1"
+                      >Last Visit</span
+                    >
+                  </i>
                   <button
-                    @click="visitDetails('first')"
+                    @click="visitDetails('last')"
                     class="border-0 font-weight-bold bg-white"
                     name="detail"
                     id="detail"
@@ -502,628 +906,256 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
                     ></select>
                   </button>
                 </div>
+                <div
+                  v-if="visit === 'last'"
+                  class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
+                >
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Type</h5>
+                    <h6 class="black-text">Appointment</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Visit Status</h5>
+                    <h6 class="black-text">Served</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Started</h5>
+                    <h6 class="black-text">01:30</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Ended</h5>
+                    <h6 class="black-text">02:20</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Service</h5>
+                    <h6 class="black-text">Cardialogy</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Staff</h5>
+                    <h6 class="black-text">Dr. Le Kim En</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Reschedual</h5>
+                    <h6 class="black-text">3 times</h6>
+                  </div>
+                </div>
+                <div
+                  class="last-vist d-flex flex-row justify-content-between mt-4"
+                >
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                      />
+                    </svg>
+                    <span class="font-weight-bold greyy-text ml-1"
+                      >Current Vistit</span
+                    >
+                  </i>
+                  <button
+                    @click="visitDetails('current')"
+                    class="border-0 font-weight-bold bg-white"
+                    name="detail"
+                    id="detail"
+                  >
+                    23 Dec, 2023
+                    <select
+                      name=""
+                      id=""
+                      class="border-0 bg-white"
+                      ref="dropdown"
+                    ></select>
+                  </button>
+                </div>
+                <div
+                  v-if="visit === 'current'"
+                  class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
+                >
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Type</h5>
+                    <h6 class="black-text">Appointment</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Visit Status</h5>
+                    <h6 class="black-text">Served</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Started</h5>
+                    <h6 class="black-text">01:30</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Ended</h5>
+                    <h6 class="black-text">02:20</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Service</h5>
+                    <h6 class="black-text">Cardialogy</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Staff</h5>
+                    <h6 class="black-text">Dr. Le Kim En</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Reschedual</h5>
+                    <h6 class="black-text">3 times</h6>
+                  </div>
+                </div>
+                <div
+                  class="last-vist d-flex flex-row justify-content-between mt-4"
+                >
+                  <i>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="15"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                      />
+                    </svg>
+                    <span class="font-weight-bold greyy-text ml-1"
+                      >Next Visit</span
+                    >
+                  </i>
+                  <button
+                    @click="visitDetails('next')"
+                    class="border-0 font-weight-bold bg-white"
+                    name="detail"
+                    id="detail"
+                  >
+                    23 Dec, 2023
+                    <select
+                      name=""
+                      id=""
+                      class="border-0 bg-white"
+                      ref="dropdown"
+                    ></select>
+                  </button>
+                </div>
+                <div
+                  v-if="visit === 'next'"
+                  class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
+                >
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Type</h5>
+                    <h6 class="black-text">Appointment</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Visit Status</h5>
+                    <h6 class="black-text">Served</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Started</h5>
+                    <h6 class="black-text">01:30</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Time Ended</h5>
+                    <h6 class="black-text">02:20</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Service</h5>
+                    <h6 class="black-text">Cardialogy</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Staff</h5>
+                    <h6 class="black-text">Dr. Le Kim En</h6>
+                  </div>
+                  <div
+                    class="options d-flex align-items-center justify-content-between"
+                  >
+                    <h5 class="greyy-text">Reschedual</h5>
+                    <h6 class="black-text">3 times</h6>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- Visits -->
             <div
-              v-if="visit === 'first'"
-              ref="firstVisit"
-              class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
+              class="tab-pane fade show active"
+              id="pills-visits"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
             >
               <div
-                class="options d-flex align-items-center justify-content-between"
+                class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
               >
-                <h5 class="greyy-text">Type</h5>
-                <h6 class="black-text">Appointment</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Visit Status</h5>
-                <h6 class="black-text">Served</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Started</h5>
-                <h6 class="black-text">01:30</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Ended</h5>
-                <h6 class="black-text">02:20</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Service</h5>
-                <h6 class="black-text">Cardialogy</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Staff</h5>
-                <h6 class="black-text">Dr. Le Kim En</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Reschedual</h5>
-                <h6 class="black-text">3 times</h6>
+                Detail text for Visits
               </div>
             </div>
+            <!-- Notes -->
             <div
-              class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
+              class="tab-pane fade show active"
+              id="pills-notes"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
             >
               <div
-                class="last-vist d-flex flex-row justify-content-between mt-4 mt-md-2 mt-md-1"
+                class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
               >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Last Visit</span
-                  >
-                </i>
-                <button
-                  @click="visitDetails('last')"
-                  class="border-0 font-weight-bold bg-white"
-                  name="detail"
-                  id="detail"
-                >
-                  23 Dec, 2023
-                  <select
-                    name=""
-                    id=""
-                    class="border-0 bg-white"
-                    ref="dropdown"
-                  ></select>
-                </button>
-              </div>
-              <div
-                v-if="visit === 'last'"
-                class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
-              >
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Type</h5>
-                  <h6 class="black-text">Appointment</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Visit Status</h5>
-                  <h6 class="black-text">Served</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Started</h5>
-                  <h6 class="black-text">01:30</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Ended</h5>
-                  <h6 class="black-text">02:20</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Service</h5>
-                  <h6 class="black-text">Cardialogy</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Staff</h5>
-                  <h6 class="black-text">Dr. Le Kim En</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Reschedual</h5>
-                  <h6 class="black-text">3 times</h6>
-                </div>
-              </div>
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Current Vistit</span
-                  >
-                </i>
-                <button
-                  @click="visitDetails('current')"
-                  class="border-0 font-weight-bold bg-white"
-                  name="detail"
-                  id="detail"
-                >
-                  23 Dec, 2023
-                  <select
-                    name=""
-                    id=""
-                    class="border-0 bg-white"
-                    ref="dropdown"
-                  ></select>
-                </button>
-              </div>
-              <div
-                v-if="visit === 'current'"
-                class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
-              >
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Type</h5>
-                  <h6 class="black-text">Appointment</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Visit Status</h5>
-                  <h6 class="black-text">Served</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Started</h5>
-                  <h6 class="black-text">01:30</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Ended</h5>
-                  <h6 class="black-text">02:20</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Service</h5>
-                  <h6 class="black-text">Cardialogy</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Staff</h5>
-                  <h6 class="black-text">Dr. Le Kim En</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Reschedual</h5>
-                  <h6 class="black-text">3 times</h6>
-                </div>
-              </div>
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Next Visit</span
-                  >
-                </i>
-                <button
-                  @click="visitDetails('next')"
-                  class="border-0 font-weight-bold bg-white"
-                  name="detail"
-                  id="detail"
-                >
-                  23 Dec, 2023
-                  <select
-                    name=""
-                    id=""
-                    class="border-0 bg-white"
-                    ref="dropdown"
-                  ></select>
-                </button>
-              </div>
-              <div
-                v-if="visit === 'next'"
-                class="details-box border mt-2 d-flex flex-column pr-2 pl-2"
-              >
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Type</h5>
-                  <h6 class="black-text">Appointment</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Visit Status</h5>
-                  <h6 class="black-text">Served</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Started</h5>
-                  <h6 class="black-text">01:30</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Time Ended</h5>
-                  <h6 class="black-text">02:20</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Service</h5>
-                  <h6 class="black-text">Cardialogy</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Staff</h5>
-                  <h6 class="black-text">Dr. Le Kim En</h6>
-                </div>
-                <div
-                  class="options d-flex align-items-center justify-content-between"
-                >
-                  <h5 class="greyy-text">Reschedual</h5>
-                  <h6 class="black-text">3 times</h6>
-                </div>
+                Detail text for Notes
               </div>
             </div>
-          </div>
-          <div
-            v-show="activeFeature === 'visits'"
-            class="feature-details w-100"
-          >
-            <div class="total-first">
-              <div
-                class="totla d-flex align-items-center justify-content-between mt-2"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                    />
-                  </svg>
-                  <span class="greyy-text ml-1">Total visits</span>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">23</h6>
-              </div>
-            </div>
-
+            <!-- Files -->
             <div
-              class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
+              class="tab-pane fade show active"
+              id="pills-files"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
             >
               <div
-                class="last-vist d-flex flex-row justify-content-between mt-4 mt-md-2 mt-md-1"
+                class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
               >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Last Visit</span
-                  >
-                </i>
-                <div class="detail">
-                  <select
-                    class="border-0 font-weight-bold"
-                    name="detail"
-                    id="detail"
-                  >
-                    <option value="">23 Dec, 2023</option>
-                  </select>
-                </div>
-              </div>
-
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Current Vistit</span
-                  >
-                </i>
-                <div class="detail">
-                  <select
-                    class="border-0 font-weight-bold"
-                    name="detail"
-                    id="detail"
-                  >
-                    <option value="">In Queue</option>
-                  </select>
-                </div>
-              </div>
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Next Visit</span
-                  >
-                </i>
-                <div class="detail">
-                  <select
-                    class="border-0 font-weight-bold"
-                    name="detail"
-                    id="detail"
-                  >
-                    <option value="">23 Dec, 2023</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-show="activeFeature === 'notes'" class="feature-details w-100">
-            <div class="total-first">
-              <div
-                class="totla d-flex align-items-center justify-content-between mt-2"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                    />
-                  </svg>
-                  <span class="greyy-text ml-1">Total visits</span>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">23</h6>
-              </div>
-            </div>
-            <div class="details-box border mt-2 d-flex flex-column pr-2 pl-2">
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Type</h5>
-                <h6 class="black-text">Appointment</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Visit Status</h5>
-                <h6 class="black-text">Served</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Started</h5>
-                <h6 class="black-text">01:30</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Ended</h5>
-                <h6 class="black-text">02:20</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Service</h5>
-                <h6 class="black-text">Cardialogy</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Staff</h5>
-                <h6 class="black-text">Dr. Le Kim En</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Reschedual</h5>
-                <h6 class="black-text">3 times</h6>
-              </div>
-            </div>
-            <div
-              class="first-visit d-flex flex-column justify-content-between mt-4 mt-md-2 mt-md-1"
-            >
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4 mt-md-2 mt-md-1"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Last Visit</span
-                  >
-                </i>
-                <div class="detail">
-                  <select
-                    class="border-0 font-weight-bold"
-                    name="detail"
-                    id="detail"
-                  >
-                    <option value="">23 Dec, 2023</option>
-                  </select>
-                </div>
-              </div>
-
-              <div
-                class="last-vist d-flex flex-row justify-content-between mt-4"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    />
-                  </svg>
-                  <span class="font-weight-bold greyy-text ml-1"
-                    >Next Visit</span
-                  >
-                </i>
-                <div class="detail">
-                  <select
-                    class="border-0 font-weight-bold"
-                    name="detail"
-                    id="detail"
-                  >
-                    <option value="">23 Dec, 2023</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-show="activeFeature === 'files'" class="feature-details w-100">
-            <div class="total-first">
-              <div
-                class="totla d-flex align-items-center justify-content-between mt-2"
-              >
-                <i>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                    />
-                  </svg>
-                  <span class="greyy-text ml-1">Total visits</span>
-                </i>
-                <h6 class="ml-4 ml-md-2 ml-sm-1">23</h6>
-              </div>
-            </div>
-            <div class="details-box border mt-2 d-flex flex-column pr-2 pl-2">
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Type</h5>
-                <h6 class="black-text">Appointment</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Visit Status</h5>
-                <h6 class="black-text">Served</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Started</h5>
-                <h6 class="black-text">01:30</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Time Ended</h5>
-                <h6 class="black-text">02:20</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Service</h5>
-                <h6 class="black-text">Cardialogy</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Staff</h5>
-                <h6 class="black-text">Dr. Le Kim En</h6>
-              </div>
-              <div
-                class="options d-flex align-items-center justify-content-between"
-              >
-                <h5 class="greyy-text">Reschedual</h5>
-                <h6 class="black-text">3 times</h6>
+                Detail text for Files
               </div>
             </div>
           </div>
@@ -1134,12 +1166,12 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
 </template>
 
 <script>
-import serviceFilters from "./serviceFilters.vue";
+// import serviceFilters from "./serviceFilters.vue";
 
 export default {
   name: "HelloWorld",
   components: {
-    serviceFilters,
+    // serviceFilters,
   },
   data() {
     return {
@@ -1149,6 +1181,40 @@ export default {
       first: "bg-white",
       second: "bg-message",
       serviceFilter1: false,
+      selectedUser: [],
+      showDiv: true,
+      staff: [
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+        {
+          profile: require("@/assets/icons8-user-80.png"),
+          name: "Dr.Lee Kim En",
+          service: "sPoG",
+        },
+      ],
     };
   },
   methods: {
@@ -1176,6 +1242,22 @@ export default {
     },
     showFilters() {
       this.serviceFilter1 = true;
+    },
+    updateSelectedUsers() {
+      console.log("selected");
+      this.selectedUser = [];
+      //   this.selectedUsers = this.staff.filter(user => user?.isSelected);
+      for (let i = 0; i <= this.staff.length; i++) {
+        if (this.staff[i] && this.staff[i].isSelected) {
+          this.selectedUser.push(this.staff[i]);
+        }
+      }
+      console.log("selected");
+    },
+    showSelected() {
+      console.log("this is active");
+      console.log(this.selectedUser);
+      return this.selectedUser;
     },
   },
 };
@@ -1352,6 +1434,9 @@ h6 {
 .date-time {
   width: 90%;
 }
+.dropdown-item{
+  padding: 0;
+}
 
 .message {
   width: 90%;
@@ -1403,22 +1488,203 @@ a {
   background-color: #125934;
 }
 
-.column {
-  flex-basis: 100%;
-}
-/* a.active {
+/* Nav link style */
+
+.nav-tabs .nav-link.active {
+  border-bottom-color: #e3672d;
   color: #e3672d;
-} */
-.nav-link {
+}
+ .dropdown-menu-right{
+  left: 0 !important;
+  right: 40% !important;
+  width: 100% !important;
+}
+.nav-tabs .nav-link {
+  border: none;
+  margin-bottom: 1px;
   text-decoration: none;
   cursor: pointer;
   color: #a0a4a6;
-
   border-bottom: 3px solid transparent; /* Add a transparent border to create space for the line */
 }
-.nav-link.active {
-  border-bottom-color: #e3672d;
-  color: #e3672d;
+
+/* Nav Pills Style */
+
+.nav-pills {
+  margin-bottom: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #a0a4a6;
+  border-bottom: 3px solid transparent; /* Add a transparent border to create space for the line */
+}
+.nav-pills .nav-link {
+  margin-bottom: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #a0a4a6;
+  border-bottom: 3px solid transparent;
+}
+.nav-pills .nav-link.active {
+  border-bottom-color: #d99d81;
+  color: #d99d81;
+  background-color: transparent;
+}
+
+/* Modal Filter for StAR */
+hr {
+  width: 99%;
+}
+.position-container {
+  margin: 0 auto;
+}
+.position-container-inner {
+  padding: 1rem 2rem;
+  /* Style for the modal container */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 10000;
+}
+
+.title-svg {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.title {
+}
+
+.svg {
+  padding-left: 1rem;
+  width: 30%;
+}
+label {
+  display: block;
+  padding-bottom: 0.7rem;
+  padding-left: 0.5rem;
+}
+.sub-head {
+  padding-bottom: 1rem;
+}
+.positions {
+  display: flex;
+  flex-direction: column;
+}
+
+.waited-time {
+  /* padding-bottom: 1rem; */
+}
+
+.w-40 {
+  width: 40%;
+}
+.w-60 {
+  width: 60%;
+}
+.customer-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.service-options {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 9rem;
+}
+.showmore {
+  border: none;
+  font-weight: bold;
+  background: transparent;
+  text-decoration: underline;
+}
+
+.save-clear-buttons {
+  display: flex;
+}
+.clear-button,
+.save-button {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.save-button {
+  background-color: rgb(1, 60, 1);
+  color: white;
+  font-weight: bold;
+}
+.clear-button {
+  background-color: white;
+  border-color: rgb(199, 196, 196);
+  border-radius: 1rem;
+}
+
+/* Forward Message Filters */
+.text-gray {
+  color: #9d9d9d;
+}
+.w-95 {
+  width: 80%;
+}
+.w-5 {
+  width: auto;
+}
+.search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  border-color: transparent;
+  background-color: #efefef;
+}
+.search-bar {
+  /* border-right: none; */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.user-container {
+  position: relative;
+  /* display: inline-block; */
+}
+.user-profile-pic {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+}
+.online-badge {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  top: 80%;
+  left: 4%;
+  border-radius: 50%;
+  background-color: green;
+  opacity: 0.8;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.green {
+  background-color: #125835;
+}
+.gray {
+  color: #b9b9b9;
+}
+.for-canc {
+  border-radius: 2rem;
+  border: 2px solid;
+  width: 7rem;
+  max-width: 10rem;
+  height: 2.5rem;
 }
 
 /* Media Query */
