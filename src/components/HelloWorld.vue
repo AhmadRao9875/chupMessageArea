@@ -438,7 +438,7 @@
                 :style="{ backgroundColor: first }"
                 class="profile-banner d-flex flex-row py-lg-3 py-md-2 py-sm-1"
               >
-                <div class="profile-pic">
+                <div class="message-profile-pic">
                   <img src="../assets/icons8-user-80.png" alt="" />
                 </div>
                 <div class="profile-detail d-flex flex-column">
@@ -453,8 +453,36 @@
                       00:41
                     </div>
                   </div>
-                  <div class="last-message ml-4 ml-md-2 ml-sm-1">
+                  <div class="last-message d-flex justify-content-between ml-4 ml-md-2 ml-sm-1">
                     <p>it's a dull pain and it feels like there's</p>
+                    <i>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#E3672D"
+                        class="bi bi-1-circle-fill ml-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"
+                        />
+                      </svg>
+                    </i>
+                    <i>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                    </i>
                   </div>
                 </div>
               </div>
@@ -463,7 +491,7 @@
                 class="profile-banner d-flex flex-row py-lg-3 py-md-2 py-sm-1"
                 :style="{ backgroundColor: 'first' }"
               >
-                <div class="profile-pic">
+                <div class="message-profile-pic">
                   <img src="../assets/icons8-user-80.png" alt="" />
                 </div>
                 <div class="profile-detail d-flex flex-column">
@@ -493,7 +521,7 @@
               <div
                 class="profile-banner d-flex flex-row py-lg-3 py-md-2 py-sm-1 bg-white"
               >
-                <div class="profile-pic">
+                <div class="message-profile-pic">
                   <img src="../assets/icons8-user-80.png" alt="" />
                 </div>
                 <div class="profile-detail d-flex flex-column">
@@ -516,7 +544,7 @@
               <div
                 class="profile-banner d-flex flex-row py-lg-3 py-md-2 py-sm-1 bg-message"
               >
-                <div class="profile-pic">
+                <div class="message-profile-pic">
                   <img src="../assets/icons8-user-80.png" alt="" />
                 </div>
                 <div class="profile-detail d-flex flex-column">
@@ -1299,6 +1327,18 @@ h6 {
   height: auto;
 }
 
+.message-profile-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message-profile-pic img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(226, 222, 222);
+}
+
 .profile-pic img {
   border-radius: 50%;
   width: 4rem;
@@ -1390,6 +1430,7 @@ h6 {
   color: #6d6d6d;
 }
 .greyy-text {
+  font-weight: bold;
   color: #6d6d6d;
   font-size: 0.8rem;
 }
@@ -1540,6 +1581,9 @@ a {
   border-bottom-color: #d99d81;
   color: #d99d81;
   background-color: transparent;
+}
+.detail li a {
+  color: black;
 }
 
 /* Modal Filter for StAR */
@@ -1905,11 +1949,11 @@ label {
     font-size: 0.7rem;
     line-height: 1;
   }
-  .dr-name{
-    font-size: .7rem;
+  .dr-name {
+    font-size: 0.7rem;
   }
-.email h6{
-  font-weight: .7rem!important;
-}
+  .email h6 {
+    font-weight: 0.7rem !important;
+  }
 }
 </style>
