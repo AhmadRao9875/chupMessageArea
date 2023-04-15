@@ -8,7 +8,7 @@
               <img src="../assets/icons8-user-80.png" alt="" />
             </div>
             <div class="profile-detail d-flex flex-column">
-              <div class="profile-name mr-1 text-dark font-weight-bold">
+              <div class="dr-profile-name mr-1 text-dark font-weight-bold">
                 Drg.Maria Aurora T.,SPKGA
               </div>
               <div class="profile-status d-flex flex-row align-items-center">
@@ -381,7 +381,7 @@
             </form>
           </div>
           <hr class="left-rule" />
-          <ul class="d-flex justify-content-between nav nav-tabs">
+          <ul class="d-flex justify-content-between nav nav-tabs messages">
             <li class="nav-item">
               <a
                 @click="showActiveMessage('all')"
@@ -601,10 +601,10 @@
                   d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
                 />
               </svg>
-              <h5 class="ml-3">wed, 22feb 2023</h5>
+              <h5 class="ml-3 ml-md-1">wed, 22feb 2023</h5>
             </div>
             <div
-              class="time d-flex justify-content-center align-items-center ml-5"
+              class="time d-flex justify-content-center align-items-center ml-4 ml-md-2 ml-sm-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -618,7 +618,7 @@
                   d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
                 />
               </svg>
-              <h5 class="ml-3">04:27:12 pm</h5>
+              <h5 class="ml-3 ml-md-1">04:27:12 pm</h5>
             </div>
           </div>
           <div class="message mt-3">
@@ -738,9 +738,11 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
                       />
                     </svg>
                   </i>
-                  <h6 class="ml-4 ml-md-2 ml-sm-1">khadijah123@gmail.com</h6>
+                  <h6 class="ml-2 ml-md-2 ml-sm-1">khadijah123@gmail.com</h6>
                 </div>
-                <div class="whatsapp d-flex align-items-center mt-2 mb-3">
+                <div
+                  class="whatsapp d-flex align-items-center mt-2 mb-3 mb-md-3 mb-sm-0"
+                >
                   <i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -755,7 +757,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
                       />
                     </svg>
                   </i>
-                  <h6 class="ml-4 ml-md-2 ml-sm-1">+0900 786 01</h6>
+                  <h6 class="ml-2 ml-md-2 ml-sm-1">+0900 786 01</h6>
                 </div>
               </div>
               <hr class="center-rule" />
@@ -812,7 +814,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit sapiente venia
                         aria-expanded="false"
                         >23 Dec, 2022</a
                       >
-                      <div class="dropdown-menu dropdown-menu-right w-100" >
+                      <div class="dropdown-menu dropdown-menu-right w-100">
                         <a
                           class="options d-flex align-items-center justify-content-between dropdown-item"
                           href="#"
@@ -1307,7 +1309,7 @@ h6 {
   font-size: 1rem;
 }
 .width-80 {
-  width: 80%;
+  width: 75%;
 }
 .open {
   background-color: #d0f8e7;
@@ -1368,6 +1370,10 @@ h6 {
 } */
 .feature button::after:last-child {
   display: none;
+}
+
+.dropdown-item::marker {
+  content: none;
 }
 
 .search-holder {
@@ -1434,7 +1440,7 @@ h6 {
 .date-time {
   width: 90%;
 }
-.dropdown-item{
+.dropdown-item {
   padding: 0;
 }
 
@@ -1494,7 +1500,7 @@ a {
   border-bottom-color: #e3672d;
   color: #e3672d;
 }
- .dropdown-menu-right{
+.dropdown-menu-right {
   left: 0 !important;
   right: 40% !important;
   width: 100% !important;
@@ -1506,6 +1512,10 @@ a {
   cursor: pointer;
   color: #a0a4a6;
   border-bottom: 3px solid transparent; /* Add a transparent border to create space for the line */
+}
+
+.detail li .nav-link {
+  padding: 0;
 }
 
 /* Nav Pills Style */
@@ -1523,6 +1533,8 @@ a {
   cursor: pointer;
   color: #a0a4a6;
   border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 0;
 }
 .nav-pills .nav-link.active {
   border-bottom-color: #d99d81;
@@ -1694,6 +1706,7 @@ label {
   .chat-bar {
     width: 30%;
   }
+
   .chat-box {
     width: 40%;
   }
@@ -1702,7 +1715,15 @@ label {
     height: 100%;
     justify-content: center;
   }
+
+  .whatsapp {
+    margin-bottom: 0;
+  }
+  .messages {
+    justify-content: space-around !important;
+  }
   .message-filters {
+    justify-content: space-around !important;
     flex-wrap: wrap;
   }
   .chats-feature {
@@ -1715,22 +1736,56 @@ label {
     text-align: center;
   }
   .feature-buttons {
-    margin: 10px;
+    margin: 5x;
     padding: 0;
     font-size: 1rem;
   }
   .search-holder {
     width: 70%;
   }
+  .last-message {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .profile-banner {
+    padding-bottom: 1rem;
+  }
+  .profile-name {
+    width: 80%;
+    justify-content: space-between !important;
+    padding: 0.2rem !important;
+  }
+  .profile-pic {
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-pic img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 @media only screen and (max-width: 760px) {
   .form-inline .form-control {
     display: inline-block;
-    width: 70%;
     vertical-align: middle;
   }
+
   .message-inner {
     flex-direction: column;
+  }
+  .email-wht {
+    justify-content: space-around;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-pic img {
+    width: 2em;
+    height: 2em;
   }
   .chat-bar {
     width: 100%;
@@ -1738,24 +1793,44 @@ label {
   .chat-box {
     width: 100%;
   }
+
   .message-details {
     width: 100%;
     justify-content: center;
   }
+
   .profile-banner-res {
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+  }
+  .profile-banner-res .profile-pic img {
+    width: 4rem;
+    height: 4rem;
   }
   .profile-detail {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 80%;
   }
+  .profile-detail .last-message p {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .profile-detail .dr-profile-name {
+    font-size: 1rem;
+  }
+
   .chats-feature {
     justify-content: space-around !important;
   }
   .chats {
     width: 30%;
+  }
+  .date-time {
+    width: 100%;
+    justify-content: space-around !important;
   }
   .feature {
     width: 60%;
@@ -1803,5 +1878,38 @@ label {
     padding: 0;
     width: 100%;
   }
+  .time {
+    margin: 0 !important;
+  }
+  .profile-name {
+    width: 100% !important;
+  }
+  .customer-options {
+    width: 66%;
+  }
+  .forward-inner {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .online-badge {
+    display: none;
+  }
+  .feature {
+    text-align: start;
+  }
+  .note h5 {
+    font-size: 0.7rem;
+  }
+  .btn-all {
+    font-weight: normal !important;
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+  .dr-name{
+    font-size: .7rem;
+  }
+.email h6{
+  font-weight: .7rem!important;
+}
 }
 </style>
