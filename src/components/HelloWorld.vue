@@ -4,7 +4,7 @@
       <div class="message-inner d-flex flex-wrap">
         <div class="chat-bar d-flex flex-column bg-white">
           <div class="profile-banner profile-banner-res d-flex flex-row py-3">
-            <div class="profile-pic">
+            <div class="main-profile-pic">
               <img src="../assets/icons8-user-80.png" alt="" />
             </div>
             <div class="profile-detail d-flex flex-column">
@@ -347,6 +347,8 @@
                     height="15"
                     fill="currentColor"
                     class="bi bi-chat-left-text"
+                    data-toggle="modal"
+                    data-target="#customizedSlots"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -362,6 +364,25 @@
               </button>
             </div>
           </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
           <div
             class="search-bar w-100 d-flex align-items-center justify-content-center py-lg-2 py-md-1 py-sm-0"
           >
@@ -453,7 +474,9 @@
                       00:41
                     </div>
                   </div>
-                  <div class="last-message d-flex justify-content-between ml-4 ml-md-2 ml-sm-1">
+                  <div
+                    class="last-message d-flex justify-content-between ml-4 ml-md-2 ml-sm-1"
+                  >
                     <p>it's a dull pain and it feels like there's</p>
                     <i>
                       <svg
@@ -1327,6 +1350,16 @@ h6 {
   height: auto;
 }
 
+.main-profile-pic{
+  width: auto;
+  height: auto;
+}
+.main-profile-pic img{
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-color: #9d9d9d;
+}
 .message-profile-pic {
   display: flex;
   align-items: center;
@@ -1742,6 +1775,8 @@ label {
   max-width: 10rem;
   height: 2.5rem;
 }
+
+/* Customized Slots modal style */
 
 /* Media Query */
 @media only screen and (max-width: 1200px) {
